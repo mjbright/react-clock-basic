@@ -8,7 +8,7 @@ export default class App extends Component {
         super();
 
         this.state = {
-            title: 'The React Clock [Served from __HOST__]'
+            title: 'The React Clock [__INFO__]'
         };
     }
 
