@@ -1,9 +1,16 @@
 #!/bin/sh
 
+#exec >/tmp/exec.log 2>&1
+exec 2>&1 | tee /tmp/exec.log
+
+set -x
+
 HOST=$(hostname)
 
 #INFO="Served from host ${HOST} image __IMAGE__"; sed -i.bak -e "s/__INFO__/$INFO/" /usr/src/app/src/components/App.js;
-INFO="HELLO from $HOST ($COLOR) ($IMAGE)"
+#INFO="Served from $HOST <image $IMAGE>"
+INFO="Server $HOST, image $IMAGE"
+sed -i.bak -e "s?__INFO__?$INFO?" /usr/src/app/src/components/App.js
 
 # Start nginx reverse-proxy:
 nginx

@@ -45,7 +45,7 @@ var handleRequest = function(request, response) {
   msg=`Received request from ${client} [${ua}] for URL: ${fullUrl}`;
   color_log(msg); //msg=color(msg, COLOR); //console.log(msg);
 
-  response_msg = `${MSG} from host '${fqdn}'!\n`;
+  response_msg = `${MSG}\n`;
   response_msg=color(response_msg, COLOR); //#console.log(response_msg);
   response.writeHead(200);
   response.end(response_msg);
