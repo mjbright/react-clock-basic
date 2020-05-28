@@ -41,5 +41,8 @@ done
 CMD="docker tag ${ORG}/clock:1 ${ORG}/clock"
 echo; echo "-- $CMD"; $CMD
 
+CMD="docker push ${ORG}/clock"
+echo; echo "-- $CMD"; $CMD
+
 # Ubuntu based?:
 # docker build -f Dockerfile.node -t mjbright/clock . && docker push mjbright/clock
